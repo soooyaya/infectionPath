@@ -25,6 +25,8 @@ int main(int argc, const char * argv[]) {
     void *ifct_element;
     FILE* fp;
     int pIndex, age, time;
+    int place;
+    int cnt;
     int placeHist[N_HISTORY];
     int i;
     int minAge, maxAge;
@@ -46,7 +48,7 @@ int main(int argc, const char * argv[]) {
     
     //? #if 
     //1-2. loading each patient informations
-    while (3 == fscanf(fp, "%i %i %i", &pIndex, &age &time))
+    while (3 == fscanf(fp, "%i %i %i", &pIndex, &age, &time))
     {
     	for(i=0;i<5;i++)
 		{
@@ -60,7 +62,7 @@ int main(int argc, const char * argv[]) {
 		//지움 printf(%i번째 환자 감염 경로 : ", 환자번호); 
 		
 	}
-	#endif
+	//#endif
     
     //1-3. FILE pointer close
     fclose(fp);
@@ -98,7 +100,7 @@ int main(int argc, const char * argv[]) {
                 
             case MENU_PATIENT:
                 //지움 printf("age : %i\n", ifctele_getAge(ifct_element));   
-                printf("Patient index : \n");
+                printf("Patient index : ");
                 scanf("%i", &pIndex);
                 ifct_element = ifctdb_getData(pIndex); 
                 ifctele_printElement(ifct_element);
@@ -106,13 +108,13 @@ int main(int argc, const char * argv[]) {
                 break;
                 
             case MENU_PLACE:
-            	printf("Place Nmae : \n");
+            	printf("Place Nmae : ");
             	scanf("%i", &place);
             	 
-            	for(i=0;i<5,i++) 
+            	for(i=0;i<5;i++) 
             	{
             		ifct_element = ifctdb_getData(i); 
-            		!!이어서 풀어라!!
+            		//!!이어서 풀어라!!
             		
 				}
                 
@@ -120,21 +122,22 @@ int main(int argc, const char * argv[]) {
                 break;
                 
             case MENU_AGE:
-            	printf("minimal age : \n");
+            	printf("minimal age : ");
             	scanf("%i", &minAge);
             	
-            	printf("maximal age : \n");
+            	printf("maximal age : ");
             	scanf("%i", &maxAge);
             	
             	for (i=0;i<5;i++)
             	{
             		if(minAge <= ifctele_getAge(ifctdb_getData(i)) && ifctele_getAge(ifctdb_getData(i)) <= maxAge)
+            		printf("There are %i patients detected in %s.\n", cnt, place);
 				}
                 
                 break;
                 
             case MENU_TRACK:
-            	printf("Patient index : \n");
+            	printf("Patient index : ");
             	scanf("%i", &pIndex);
             	
             	/*

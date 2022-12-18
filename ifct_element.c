@@ -122,7 +122,7 @@ void* ifctele_genElement(int index, int age, unsigned int detected_time, int his
 	
 	for(i=0;i<5;i++)
 	{
-		ptr->place_t = history_place[i];  //모르겠.. 
+		ptr->place[N_HISTORY] = history_place[i];  //모르겠.. 
 	}
 		
 	return ptr;
@@ -138,13 +138,14 @@ int ifctele_getAge(void* obj)
 	return ptr->age;
 }
 
-int ifctele_getHistPlaceIndex(void* obj, int index);
+
+int ifctele_getHistPlaceIndex(void* obj, int index) 
 {
 	ifs_ele_t* ptr = (ifs_ele_t*)obj;
 	return ptr->place;   // ?? 
 }
 
-unsigned int ifctele_getinfestedTime(void* obj);
+unsigned int ifctele_getinfestedTime(void* obj)
 {
 	ifs_ele_t* ptr = (ifs_ele_t*)obj;
 	return ptr->time;
