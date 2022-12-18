@@ -46,7 +46,7 @@ int main(int argc, const char * argv[]) {
         return -1;
     }
     
-    //? #if 
+    //#if 
     //1-2. loading each patient informations
     while (3 == fscanf(fp, "%i %i %i", &pIndex, &age, &time))
     {
@@ -107,19 +107,21 @@ int main(int argc, const char * argv[]) {
 				                
                 break;
                 
+
             case MENU_PLACE:
-            	printf("Place Nmae : ");
-            	scanf("%i", &place);
-            	 
+            	printf("Place Name : ");
+            	scanf("%s", &placeHist[N_HISTORY]);
+            	
             	for(i=0;i<5;i++) 
             	{
             		ifct_element = ifctdb_getData(i); 
             		//!!이어서 풀어라!!
-            		
+            		cnt++;
 				}
                 
                 printf("There are %i patients detected in %s.\n", cnt, place);
                 break;
+                
                 
             case MENU_AGE:
             	printf("minimal age : ");
@@ -130,6 +132,7 @@ int main(int argc, const char * argv[]) {
             	
             	for (i=0;i<5;i++)
             	{
+            		ifct_element = ifctdb_getData(i); 
             		if(minAge <= ifctele_getAge(ifctdb_getData(i)) && ifctele_getAge(ifctdb_getData(i)) <= maxAge)
             		printf("There are %i patients detected in %s.\n", cnt, place);
 				}
