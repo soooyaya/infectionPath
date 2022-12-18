@@ -110,42 +110,62 @@ typedef struct ifs_ele {
 
 void* ifctele_genElement(int index, int age, unsigned int detected_time, int history_place[N_HISTORY])
 {
+	int i;
+	
 	ifs_ele_t* ptr;
 	
-	ptr = malloc();
+	ptr = (ifs_ele_t*)malloc(sizeof(ifs_ele_t));
+	
 	ptr->index = index;
-	//..
+	ptr->age = age;
+	ptr->time = detected_time;
 	
-	//지움 ifsarray[ifs_cnt]. index = index;
-	//지움 ifsarray[ifs_cnt]. age = age;
-	
-	//지움 ifs_cnt++; 
+	for(i=0;i<5;i++)
+	{
+		ptr->place_t = history_place[i];  //모르겠.. 
+	}
 		
 	return ptr;
+	//지움 ifsarray[ifs_cnt]. index = index;
+	//지움 ifsarray[ifs_cnt]. age = age;
+    //지움 ifs_cnt++; 
 	//지움 return &ifsarray[ifs_cnt-1]; 
 }
 
 int ifctele_getAge(void* obj)
 {
 	ifs_ele_t* ptr = (ifs_ele_t*)obj;
-	
 	return ptr->age;
 }
 
 int ifctele_getHistPlaceIndex(void* obj, int index);
+{
+	ifs_ele_t* ptr = (ifs_ele_t*)obj;
+	return ptr->place;   // ?? 
+}
+
 unsigned int ifctele_getinfestedTime(void* obj);
-
-
-//char* ifctele_getPlaceName(int placeIndex);
-
+{
+	ifs_ele_t* ptr = (ifs_ele_t*)obj;
+	return ptr->time;
+}
 
 void ifctele_printElement(void* obj)
 {
-	ifs_ele_t* ptr = (ifs_ele_t*)obj;
 	
+	ifs_ele_t* ptr = (ifs_ele_t*)obj; 
+	
+	printf("Index : %i\n", ptr->index); 
 	printf("Age : %i\n", ptr->age);
+	printf("Time : %i\n", ptr->time);  
+	
+	int i;
+	
+	for (i=0;i<5;i++)
+	{
+		printf("Track : %s\n", ifctele_getPlaceName(ptr->place)); //맞나?ㅠ 
+	}
 }
-
 
 
 
