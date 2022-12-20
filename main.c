@@ -60,7 +60,6 @@ int main(int argc, const char * argv[]) {
 		ifctdb_addTail(ifct_element);
 		
 		//지움 printf(%i번째 환자 감염 경로 : ", 환자번호); 
-		
 	}
 	//#endif
     
@@ -103,7 +102,17 @@ int main(int argc, const char * argv[]) {
                 printf("Patient index : ");
                 scanf("%i", &pIndex);
                 ifct_element = ifctdb_getData(pIndex); 
-                ifctele_printElement(ifct_element);
+                ifctele_printElement(ifct_element); 
+                
+                int place1, place2, place3, place4, place5;  //최근 5개 이동 장소 출력 
+
+    	        /*
+				printf("The first place is %s\n", ifctele_getPlaceName(place1));
+    	        printf("The second place is %s\n", ifctele_getPlaceName(place2)); 
+    	        printf("The third place is %s\n", ifctele_getPlaceName(place3)); 
+    	        printf("The fourth place is %s\n", ifctele_getPlaceName(place4)); 
+    	        printf("The fifth place is %s\n", ifctele_getPlaceName(place5)); 
+	            */
 				                
                 break;
                 
@@ -120,6 +129,8 @@ int main(int argc, const char * argv[]) {
 				}
                 
                 printf("There are %i patients detected in %s.\n", cnt, place);
+            
+    	        
                 break;
                 
                 
@@ -134,7 +145,7 @@ int main(int argc, const char * argv[]) {
             	{
             		ifct_element = ifctdb_getData(i); 
             		if(minAge <= ifctele_getAge(ifctdb_getData(i)) && ifctele_getAge(ifctdb_getData(i)) <= maxAge)
-            		printf("There are %i patients detected in %s.\n", cnt, place);
+            		  printf("There are %i patients detected in %s.\n", cnt, place);
 				}
                 
                 break;
@@ -143,13 +154,14 @@ int main(int argc, const char * argv[]) {
             	printf("Patient index : ");
             	scanf("%i", &pIndex);
             	
+            
             	/*
 				현재환자=입력값;
 				while (현재환자가 누군가 있음)
 				{
 					전파자 = trackInfester(현재환자);
 					if (전파자가 있으면)
-					   printf("%i환자는 %i환자에게 전파됨\n", 현재환자, 전파자);
+					   printf("Patient %i is infected with patient %i. \n", 현재환자, 전파자);
 					else
 					   최초전파자 = 현재환자;
 					   현재환자 = 전파자;
@@ -181,9 +193,9 @@ int main(int argc, const char * argv[]) {
 	
 			    }
 				
-				
-			int convertTimeToIndex(int time, int infestedTime)
-			{
+			   
+			    int convertTimeToIndex(int time, int infestedTime)
+			    {
 			    int index = -1;
 				
 				if (time <= infestedTime && time > infestedTime-N_HISTORY)
@@ -192,12 +204,15 @@ int main(int argc, const char * argv[]) {
 				}
 				
 				return index;
-		    }
+		        }
+		       */
+
 		    
-                 */
-                 
-				    
+            	printf("Patient %i is infected with Patient %i.\n", pIndex);
+            	
+        
                 break;
+                
                 
             default:
                 printf("[ERROR Wrong menu selection! (%i), please choose between 0 ~ 4\n", menu_selection);

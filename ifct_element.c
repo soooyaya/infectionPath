@@ -102,7 +102,7 @@ typedef struct ifs_ele {
 	int index; //number
 	int age; //age
 	int time; //time
-	place_t place[N_HISTORY];//place[N_HISTORY]
+	place_t place[N_HISTORY]; //place[N_HISTORY]
 } ifs_ele_t;
 
 //지움 static ifs_ele_t ifsarray[20];
@@ -119,7 +119,7 @@ void* ifctele_genElement(int index, int age, unsigned int detected_time, int his
 	ptr->index = index;
 	ptr->age = age;
 	ptr->time = detected_time;
-	
+		
 	for(i=0;i<5;i++)
 	{
 		ptr->place[N_HISTORY] = history_place[i];  //모르겠.. 
@@ -139,7 +139,7 @@ int ifctele_getAge(void* obj)
 }
 
 
-int ifctele_getHistPlaceIndex(void* obj, int index) 
+int ifctele_getHistPlaceIndex(void* obj, int index)
 {
 	ifs_ele_t* ptr = (ifs_ele_t*)obj;
 	return ptr->place;   // ?? 
