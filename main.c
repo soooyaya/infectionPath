@@ -207,7 +207,6 @@ int main(int argc, const char * argv[]) {
 		        }
 		       */
 
-		    
             	printf("Patient %i is infected with Patient %i.\n", pIndex, pIndex);
             	
         

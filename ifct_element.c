@@ -126,10 +126,10 @@ void* ifctele_genElement(int index, int age, unsigned int detected_time, int his
 	}
 		
 	return ptr;
-	//지움 ifsarray[ifs_cnt]. index = index;
-	//지움 ifsarray[ifs_cnt]. age = age;
-    //지움 ifs_cnt++; 
-	//지움 return &ifsarray[ifs_cnt-1]; 
+	// ifsarray[ifs_cnt]. index = index;
+	// ifsarray[ifs_cnt]. age = age;
+    // ifs_cnt++; 
+	// return &ifsarray[ifs_cnt-1]; 
 }
 
 int ifctele_getAge(void* obj)
