@@ -164,7 +164,7 @@ void ifctele_printElement(void* obj)
 	
 	for (i=0;i<5;i++)
 	{
-		printf("Track : %s\n", ifctele_getPlaceName(ptr->place)); //¸Â³ª?¤Ð 
+		printf("Track : %s\n", ifctele_getPlaceName(ptr->place)); //?¤Ð 
 	}
 }
 
