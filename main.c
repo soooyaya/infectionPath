@@ -124,7 +124,7 @@ int main(int argc, const char * argv[]) {
             	for(i=0;i<5;i++) 
             	{
             		ifct_element = ifctdb_getData(i); 
-            		//!!이어서 풀어라!!
+            		
             		cnt++;
 				}
                 
