@@ -99,7 +99,7 @@ int main(int argc, const char * argv[]) {
                 
             case MENU_PATIENT:
                 //지움 printf("age : %i\n", ifctele_getAge(ifct_element));   
-                printf("Patient index : ");
+                printf("Patient index : "); //환자 번호 입 력 
                 scanf("%i", &pIndex);
                 ifct_element = ifctdb_getData(pIndex); 
                 ifctele_printElement(ifct_element); 
@@ -118,7 +118,7 @@ int main(int argc, const char * argv[]) {
                 
 
             case MENU_PLACE:
-            	printf("Place Name : ");
+            	printf("Place Name : "); // 지정된 장소 입력 
             	scanf("%s", &placeHist[N_HISTORY]);
             	
             	for(i=0;i<5;i++) 
@@ -135,10 +135,10 @@ int main(int argc, const char * argv[]) {
                 
                 
             case MENU_AGE:
-            	printf("minimal age : ");
+            	printf("minimal age : "); // 특정 범위 나이의 최소 
             	scanf("%i", &minAge);
             	
-            	printf("maximal age : ");
+            	printf("maximal age : "); // 특정 범위 나이의 최대 
             	scanf("%i", &maxAge);
             	
             	for (i=0;i<5;i++)
@@ -151,7 +151,7 @@ int main(int argc, const char * argv[]) {
                 break;
                 
             case MENU_TRACK:
-            	printf("Patient index : ");
+            	printf("Patient index : "); // 지정된 환자 입력 
             	scanf("%i", &pIndex);
             	
             
